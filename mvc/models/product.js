@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// const products = [];
 const p = path.join(path.dirname(process.mainModule.filename),'data','products.json');
 
 
@@ -16,12 +15,14 @@ const getProductsFromFile = (cb)=>{
 
 module.exports = class Product {
 
-    constructor(t){
+    constructor(t,imageUrl,description,price){
         this.title = t;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.price = price;
     }
 
     save(){
-        // products.push(this);
         const p = path.join(path.dirname(process.mainModule.filename),'data','products.json');
          getProductsFromFile((products)=>{
              products.push(this)
@@ -29,8 +30,6 @@ module.exports = class Product {
                  console.log(err);
              })
          })
-
-        
     }
 
     static fetchAll(cb){

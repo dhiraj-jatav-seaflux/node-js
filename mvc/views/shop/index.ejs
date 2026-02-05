@@ -8,16 +8,7 @@
     <link rel="stylesheet" href="/css/product.css" />
   </head>
   <body>
-    <header class="main-header">
-      <nav class="main-header__nav">
-        <ul class="main-header__item-list">
-          <li class="main-header__item"><a class="active" href="/">Shop</a></li>
-          <li class="main-header__item">
-            <a href="/admin/add-product">Add Product</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('../includes/navigation.ejs') %>
 
     <main>
       <% if (prods.length > 0) { %>
@@ -29,12 +20,12 @@
           </header>
 
           <div class="card__image">
-            <img src="" alt="A book" />
+            <img src="<%= product.imageUrl %>" alt="<%= product.title %>" />
           </div>
 
           <div class="card__content">
-            <h2 class="product__price">$19.99</h2>
-            <p class="product__description">A very interesting book</p>
+            <h2 class="product__price">$<%= product.price %></h2>
+            <p class="product__description"><%= product.description %></p>
           </div>
 
           <div class="card__actions">

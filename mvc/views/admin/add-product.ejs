@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="/css/product.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a href="/">Shop</a></li>
-                <li class="main-header__item"><a class="active" href="/admin/add-product">Add Product</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('../includes/navigation.ejs') %>
 
     <main>
         <form class="product-form" action="/admin/add-product" method="POST">
             <div class="form-control">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
+            </div>
+
+            <div class="form-control">
+                <label for="imageUrl">Image url</label>
+                <input type="text" name="imageUrl" id="imageUrl">
+            </div>
+
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" step="0.01">
+            </div>
+
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
             </div>
 
             <button class="btn" type="submit">Add Product</button>
