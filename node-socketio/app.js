@@ -53,7 +53,7 @@ app.use((error,req,res,next)=>{
 })
 
 
-mongoose.connect('mongodb+srv://dhiraj:2003@cluster0.qptfc7w.mongodb.net/messages').then(result=>{
+mongoose.connect('').then(result=>{
     const server = app.listen(8080,()=>{
         console.log('Server connection is established')
     })
