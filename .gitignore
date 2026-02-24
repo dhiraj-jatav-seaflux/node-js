@@ -50,3 +50,6 @@ temp/
 # Coverage reports
 # =========================
 coverage/
+
+server.key
+server.cert

@@ -96,5 +96,3 @@ mongoose.connect(process.env.MONGODB_URI).then(result=>{
     
 
 }).catch(err=>console.log(err))
-
-
